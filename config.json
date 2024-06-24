@@ -1,0 +1,138 @@
+{
+    "data": {
+        "dataset_index": 1,
+        "five_years_path": "./stock_prediction/data/raw/5_years.csv",
+        "ten_years_path": "./stock_prediction/data/raw/10_years.csv",
+        "features": [
+            {
+                "name": "Open",
+                "is_used": true
+            },
+            {
+                "name": "High",
+                "is_used": true
+            },
+            {
+                "name": "Low",
+                "is_used": true
+            },
+            {
+                "name": "Close",
+                "is_used": true
+            },
+            {
+                "name": "Volume",
+                "is_used": true
+            },
+            {
+                "name": "7-day MA",
+                "is_used": true
+            },
+            {
+                "name": "21-day MA",
+                "is_used": true
+            },
+            {
+                "name": "SO",
+                "is_used": true
+            },
+            {
+                "name": "RSI",
+                "is_used": true
+            },
+            {
+                "name": "MACD",
+                "is_used": true
+            }
+        ]
+    },
+    "model": {
+        "model_type": "SVR",
+        "training_settings": {
+            "batch_size": 64,
+            "epochs": 100,
+            "time_steps": 30,
+            "early_stopping": {
+                "patience": 20
+            }
+        }
+    },
+    "LSTM": {
+        "n_layers": {
+            "min": 1,
+            "max": 5,
+            "step": 1
+        },
+        "n_nodes": {
+            "min": 10,
+            "max": 200,
+            "step": 10
+        },
+        "dropout": {
+            "min": 0.0,
+            "max": 0.5,
+            "step": 0.1
+        },
+        "dense_nodes": {
+            "min": 10,
+            "max": 100,
+            "step": 10
+        },
+        "learning_rate": [
+            1e-5,
+            1e-4,
+            1e-3,
+            1e-2
+        ],
+        "loss": [
+            "mean_squared_error"
+        ],
+        "tuner_params": {
+            "max_trials": 10,
+            "executions_per_trial": 3,
+            "overwrite": true
+        }
+    },
+    "SVR": {
+        "kernel": "rbf",
+        "C": {
+            "min": 0.1,
+            "max": 10.0,
+            "step": 0.1
+        },
+        "gamma": {
+            "min": 0.001,
+            "max": 0.1,
+            "step": 0.001
+        },
+        "epsilon": {
+            "min": 0.01,
+            "max": 0.5,
+            "step": 0.01
+        },
+        "degree": {
+            "min": 1,
+            "max": 5,
+            "step": 1
+        },
+        "coef0": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.1
+        },
+        "shrinking": true,
+        "tol": {
+            "min": 0.0001,
+            "max": 0.01,
+            "step": 0.0001
+        },
+        "cache_size": 200,
+        "max_iter": -1,
+        "tuner_params": {
+            "n_iter": 150,
+            "cv": 20,
+            "n_jobs": -1,
+            "overwrite": true
+        }
+    }
+}

@@ -19,6 +19,7 @@ Here is an overview of the project structure:
 - Jupyter notebooks for data exploration, visualization, and experimentation.
 
 #### `src/`
+- **config/**: Contains configuration files for the project.
 - **data/**: Contains modules for data loading and preprocessing.
 - **features/**: Contains modules for feature engineering.
 - **models/**: Contains modules for model creation, training, and prediction.
@@ -56,7 +57,7 @@ The dataset used in this project is the historical data of the stock market from
 | Number of features      | Number of input features           | 6             |                |
 | Length of historical data | Number of past time steps used as input for prediction | 60            |
 
-## SVM Model
+## SVR Model
 ### Hyperparameters:
 | Parameter              | Description                       | Default Value | Selected Value |
 |------------------------|-----------------------------------|---------------|----------------|
@@ -79,8 +80,9 @@ The dataset used in this project is the historical data of the stock market from
 3. How the number of features affects the accuracy of the AI models?
 
 # Installation
+! Supported python version: 3.9.x
+
 1) To install the required libraries, run the following command:
 ```pip install -r requirements.txt```
-1) To run the code, run the following command:
+2) To run the code, run the following command:
 ```python main.py```
-1) ...
